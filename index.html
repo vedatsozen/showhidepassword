@@ -3,54 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRINT MY TEXT</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
-</head>
+    <title>PASSWORD SHOW AND HIDE</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
-    <input id="textinput" type="text" oninput="text()" placeholder="Write Here The Text You Want to Print">
-
-    <input id="fontsize" type="number" oninput="text()" placeholder="Choose Text Font">
-
-    <input id="color" type="color" oninput="textcolor()">
-    <button id="silbtn" onclick="yaziyisil()">DELETE THE TEXT YOU WROTE</button>
-    <h1 id="text"></h1>
     
-    
+<form>
 
-<button id="yazdir" onclick="yazdir()">PRINT</button>
+<img class="lock" src="lock.png">
+<h1>LOG IN FORM</h1>
+
+<label>Username</label>
+<input type="text" id="username">
+
+<label>Password</label>
+<div id="passworddivi">
+<input type="password" id="password">
+<img class="show" id="showhideicon" src="show.png">
+</div>
+
+<input type="submit" id="submit" value="Sign in">
+
+</form>
+
 </body>
 
 <script>
-
-document.getElementById("text").innerHTML = "WRITE SOMETHING HERE";
-document.getElementById("text").style.fontSize = "50px";
-
-function text() {
-    let inputtext = document.getElementById("textinput").value;
-    document.getElementById("text").innerHTML = inputtext ;
-    let fontSize = document.getElementById("fontsize").value;
-    document.getElementById("text").style.fontSize = fontSize + "px";
-    let fontColor = document.getElementById("color").value;
-    document.getElementById("text").style.color = fontColor;
-}
-
-function textcolor() {
-    let fontColor = document.getElementById("color").value;
-    document.getElementById("text").style.color = fontColor;
-}
-
-function yaziyisil() {
-
-    document.getElementById("textinput").value = "";
-    document.getElementById("text").innerHTML = "";
-}
-
-function yazdir() {
-      window.print();
-    }
-
-</script>
+    $(document).ready(function() {
+      $("#showhideicon").click(function() {
+        var passwordInput = $("#password");
+        var icon = $(this);
+        
+        if (passwordInput.attr("type") === "password") {
+          passwordInput.attr("type", "text");
+          icon.attr("src", "hide.png");
+        } else {
+          passwordInput.attr("type", "password");
+          icon.attr("src", "show.png");
+        }
+      });
+    });
+    </script>
 </html>
