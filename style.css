@@ -1,0 +1,127 @@
+body {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+}
+
+@media print {
+    body *:not(h1) {
+      display: none !important;
+    }
+  }
+
+input#textinput {
+    margin: auto;
+    margin-top:15px;
+    height:30px;
+    width:80vw;
+    text-align:center;
+    display: block;
+
+}
+
+input#fontsize {
+
+    display: block;
+    margin: auto;
+    margin-top:10px;
+    height:30px;
+    width:200px;
+    text-align:center;
+
+}
+
+input#color {
+
+    display: block;
+    margin: auto;
+    margin-top:10px;
+    height:30px;
+    width:200px;
+    text-align:center;
+    border:none;
+
+}
+
+input#pagecolor {
+
+    display: block;
+    margin: auto;
+    margin-top:10px;
+    height:20px;
+    width:200px;
+    text-align:center;
+    border: none;
+
+}
+
+input:focus {
+    outline: none;
+}
+
+button#silbtn {
+    display: block;
+    margin: auto;
+    margin-top:20px;
+    cursor: pointer;
+    background-color: red;
+    color:white;
+    padding:5px;
+    letter-spacing:5px;
+    border: none;
+
+
+}
+
+button#silbtn:active {
+    transform: scale(0.9);
+}
+
+h1 {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size:5rem;
+    color:black;
+    letter-spacing: 3px;
+    width:80vw;
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+  
+}
+
+span {
+    color:black;
+}
+
+p {
+    margin: auto;
+    margin-top:10px;
+    font-size:5rem;
+    font-size:1rem;
+    color:greenyellow;
+}
+
+button#yazdir {
+    position: absolute;
+    top:5px;
+    right:5px;
+    cursor: pointer;
+    background-color:green;
+    color:white;
+    padding:5px;
+    letter-spacing:5px;
+    border: none;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+label {
+    margin: auto;
+    margin-top:20px !important;
+    font-size: 14px;
+}
